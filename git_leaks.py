@@ -1,6 +1,7 @@
 import pandas as pd
 from git import Repo
 import re, signal, sys, time
+import pandas as pd
 
 def handler_signal(signal, frame): # Ctrl + C
     print('\n\n [!] Out......... \n') # Mensaje de salida
@@ -23,6 +24,8 @@ def transform():
     return git_leaks
 def load(leaks):
     print('Hay', len(leaks),'leaks') # Imprimo el número de leaks
+    leaks_df = pd.DataFrame(leaks)
+    print(leaks_df) # Imprimo los leaks
 if __name__ == '__main__':
     extract(REPO_DIR)
     leaks = transform()
