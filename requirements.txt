@@ -1,4 +1,1 @@
-git
-sys
-re
-signal
+GitPython==3.1.27
