@@ -25,6 +25,7 @@ def transform():
 def load(leaks):
     print('Hay', len(leaks),'leaks') # Imprimo el número de leaks
     leaks_df = pd.DataFrame(leaks)
+    leaks_df = leaks_df.rename(columns={0: 'leaks'}) # Renombro la columna
     print(leaks_df) # Imprimo los leaks
 if __name__ == '__main__':
     extract(REPO_DIR)
